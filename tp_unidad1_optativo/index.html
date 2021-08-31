@@ -7,47 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/tp1.css">
+    <script src="./js/tp1.js"></script>
     <title>TP - UNIDAD 1</title>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="h2 text-center mt-3">Seguro No Pagamos Cooperativa</h1>
-        <div class="row justify-content-center pt-5 mt-5 mr-1">
-            <div class="col-md-4 formulario">
+        <h1 class="h2 text-center mt-5 text-dark">Seguro No Pagamos Cooperativa</h1>
+        <div class="row justify-content-center mt-5 mr-1">
+            <div class="col-md-6 formulario">
                 <form method="" action="">
-                    <div class="form-group text-center pt-2">
+                    <div class="row text-center mb-3">
                         <h1 class="text-light">Contacto</h1>
                     </div>
-                    <div class="form-group mx-sm-4 pt-2">
-                        <input id="nombre" class="form-control" type="text" required placeholder="Nombre">
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <input id="nombre" class="form-control" type="text" required placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <input id="apellido" class="form-control" type="text" namrequired placeholder="Apellido">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <input id="dni" class="form-control" type="text" required placeholder="DNI">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group mx-sm-4">
-                        <input id="apellido" class="form-control" type="text" namrequired placeholder="Apellido">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input id="telefono" class="form-control" type="phone" required placeholder="Teléfono">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <input id="email" class="form-control" type="email" required placeholder="Email">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group mx-sm-4">
-                        <input id="dni" class="form-control" type="text" required placeholder="DNI">
-                    </div>
-                    <div class="form-group mx-sm-4">
-                        <input id="email" class="form-control" type="email" required placeholder="Email">
-                    </div>
-                    <div class="form-group mx-sm-4">
-                        <input id="telefono" class="form-control" type="phone" required placeholder="Teléfono">
-                    </div>
-                    <div class="form-group mx-sm-4">
-                        <input id="asunto" class="form-control" type="text" name="asunto" required placeholder="Asunto">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-select" aria-label="Default select example" id="seguro">
-                            <option selected>Tipo de Seguro</option>
+                    <div class="row mb-3">
+                        <div class="form-group">
+                            <select class="form-select" aria-label="Default select example" id="seguro" onchange="mostrarPrecio()">
+                            <option value="0">Tipo de Seguro</option>
                             <option value="Basico">Básico</option>
                             <option value="Intermedio">Intermedio</option>
                             <option value="Premium">Premium</option>
                         </select>
+                        </div>
+                        <div class="h3 text-light text-center m-3" id="precio">
+
+                        </div>
+
                     </div>
-                    <div class="form-group mx-sm-4 pb-1">
-                        <button type="submit" class="btn btn-block ingresar" onclick=confirmar()>ENVIAR</button>
+                    <div class="row">
+                        <button type="submit" class="btn btn-dark">Enviar</button>
                     </div>
+
             </div>
         </div>
     </div>

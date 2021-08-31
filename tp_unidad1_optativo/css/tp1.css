@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/programación.jpg");
+    background: #0F7927;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -14,18 +14,29 @@ body {
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 1);
 }
 
-.form-control {
-    background-color: rgba(0, 0, 0, 0.7);
+.form-control,
+.form-select {
+    background-color: rgba(15, 121, 39, 0.8);
     border-style: none;
     box-shadow: none;
     outline: none;
 }
 
-.form-control:focus {
-    background: rgba(0, 0, 0, 0.7);
+.form-control:focus,
+.form-select:focus {
+    background: rgba(180, 165, 14, 0.1);
     box-shadow: none;
     outline: none;
     color: lightgray;
+}
+
+.form-select {
+    color: white;
+}
+
+select option {
+    background-color: rgba(15, 121, 39, 0.8);
+    color: white;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -47,7 +58,7 @@ body {
 }
 
 .ingresar {
-    background: #222A3F;
+    background: #0EB4A5;
     padding: 10px;
     font-size: 16px;
     font-weight: 700!important;
