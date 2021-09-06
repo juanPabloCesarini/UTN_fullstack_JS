@@ -1,23 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/calculadora.css">
-    <script src="js/calculadora.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="js/Calculadora.js"></script>
+    <script src="js/Main.js"></script>
     <title>Calculadora</title>
 </head>
 
-<body>
-    <form action="">
-        <input type="number" name="num1" id="num1">
-        <div class="simbolo" id="simbolo"></div>
-        <input type="number" name="num2" id="num2">
-        <input type="submit" value="=">
+<body class="bg-web">
 
+    <form action="" name="calculadora">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1 class="h2 text-center  mt-5 text-white">Calculadora </h1>
+                <div class="row m-4">
+                    <div class="col-3 text-center"><button type="button" class="btn btn-success" onclick="main('sumar')">Sumar</button></div>
+                    <div class="col-3 text-center"><button type="button" class="btn btn-success" onclick="main('restar')">Restar</button></div>
+                    <div class="col-3 text-center"><button type="button" class="btn btn-success" onclick="main('multiplicar')">Multiplicar</button></div>
+                    <div class="col-3 text-center"><button type="button" class="btn btn-success" onclick="main('dividir')">Dividir</button></div>
+                </div>
+                <div class="row m-3">
+                    <div class="col-3">
+                        <p class="text-color h3 text-center">Número 1: </p>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control p-3 text-center" name="num1" id="num1">
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                    <div class="col-3">
+                        <p class="text-color h3 text-center">Número 2:</p>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control p-3 text-center" name="num2" id="num2">
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="col-3">
+                        <p class="text-color h3 text-center">Resultado:</p>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" name="" id="resultado" class="form-control h3 text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 </body>
 
 </html>
