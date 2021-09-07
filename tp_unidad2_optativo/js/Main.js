@@ -1,6 +1,6 @@
 const main = (operacion) => {
-    var n1 = parseFloat(document.calculadora.num1.value);
-    var n2 = parseFloat(document.calculadora.num2.value);
+    const n1 = parseFloat(document.calculadora.num1.value);
+    const n2 = parseFloat(document.calculadora.num2.value);
 
 
 
@@ -24,8 +24,13 @@ const main = (operacion) => {
             document.getElementById("resultado").value = c.multiplicar();
             break;
         case "dividir":
-            document.getElementById("resultado").style.color = "#078BF3";
-            document.getElementById("resultado").value = c.dividir();
+            if (c.dividir() != Infinity) {
+                document.getElementById("resultado").style.color = "#078BF3";
+                document.getElementById("resultado").value = c.dividir();
+            } else {
+                document.getElementById("resultado").style.color = "red";
+                document.getElementById("resultado").value = "ERROR"
+            }
             break;
         default:
             break;
