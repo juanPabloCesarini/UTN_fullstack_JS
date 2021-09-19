@@ -1,11 +1,14 @@
-import './App.css';
-
-
+import Header from "./components/header/Header";
+import Product from "./components/product/Product";
+import Footer from "./components/footer/Footer";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-     <h1 className="Display-1">PRUEBA</h1>
+    <div>
+      <Header />
+      <Product />
+      <Footer/>
     </div>
   );
 }
