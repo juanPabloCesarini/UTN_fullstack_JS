@@ -15,4 +15,5 @@
         <li>import * as bootstrap from 'bootstrap';</li>
         <li>import 'bootstrap/dist/css/bootstrap.min.css';</li>
     </ul>
+    <li>npm i bootstrap-icons</li>
 </ol>
