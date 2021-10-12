@@ -1,69 +1,25 @@
 import React, {useState} from 'react';
-import Productos from '../Pages/Productos';
+import Productos from '../Pages/Home';
 
 
 const Product = ({producto}) => {
-        const [thanks, setThanks] =useState("");
+const [thanks, setThanks] =useState("");
     
     return (    
-        <div className="container">
-            <div className="row mt-2">
-            <div className="col-4">
-                <div className="card shadow p-3 m-3">
-                    <div className="card-body">
-                        <div className="row">
-                            <div className="col">
-                                <p><strong>Nombre: </strong></p>
-                            </div>
-                            <div className="col">
-                                <p>{producto.name}</p>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <p><strong>Descripción: </strong></p>
-                                
-                            </div>
-                            <div className="col">
-                                {producto.description}
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <p><strong>Precio: </strong></p>
-                            </div>
-                            <div className="col">
-                                <p className="h3">{producto.price}</p>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <p><strong>SKU: </strong></p>
-                            </div>
-                            <div className="col">
-                                {producto.sku}
-                                <p>CODC176849E142205</p>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <p><strong>Stock: </strong></p>
-                            </div>
-                            <div className="col">
-                                <p>{producto.stock}</p>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <button className="btn btn-outline-success" onClick={()=>setThanks("Gracias por tu compra!")}>Comprar</button>
-                        </div>
-                        <div className="row text-center mt-3">
-                                <h3>{thanks}</h3>
-                        </div>
-                    </div>
+        <div className="col-4 mt-5">
+            <div className="card shadow">
+                <img src={producto.photo_url} className="card-img-top" alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">{producto.name}</h5>
+                    <p className="card-text">{producto.description}</p>
+                    <div className="card-body text-center">
+                        <button className="btn btn-warning" ><i className="bi bi-eye-fill"></i>Ver Detalle</button>                       
+                    </div> 
                 </div>
+                <button className="btn btn-success" onClick={()=>setThanks("Gracias por tu compra!")}>Comprar</button>
+                <h5 className="card-title text-success text-center mt-3">{thanks}</h5>
             </div>
-            </div>
-        </div>
+        </div>  
     );
 }
 
