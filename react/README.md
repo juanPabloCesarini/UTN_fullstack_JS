@@ -17,3 +17,7 @@
     </ul>
     <li>npm i bootstrap-icons</li>
 </ol>
+
+### Rutas
+## Dentro del proyecto
+<li>npm install react-router-dom</li>
