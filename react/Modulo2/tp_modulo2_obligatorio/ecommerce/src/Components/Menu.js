@@ -13,6 +13,12 @@ function Menu() {
               <li className="nav-item">
                 <Link to="/productos" className="nav-link"><i class="bi bi-shop text-success h3"></i><h3 class="m-2">Productos</h3></Link>
               </li>
+              <li className="nav-item">
+                <Link to="/login" className="nav-link"><i class="bi bi-door-open text-success h3"></i><h3 class="m-2">Ingresar</h3></Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/register" className="nav-link"><i class="bi bi-person-plus-fill text-success h3"></i><h3 class="m-2">Registrarse</h3></Link>
+              </li>
             </ul>
           </div>
         </div>
