@@ -1,50 +1,48 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 function FormRegister(){
-    const [form,setForm] = useState({nombre:'', apellido:'', email:'', password:''})
-
-    const handleSubmit = (e) =>{
-        console.log('form' + form)
-        e.preventDefault()
-    }
-
-    const handleChange = (e) =>{
-        const name = e.target.name
-        const value = e.target.value
-        console.log(name, value)
-        setForm({...form, [name]:value})
-    }
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
 
     return(
         <div className="col-6 p-3">
             < div className="card shadow bg-secondary">
                 <h3 className="m-2">Registro</h3>
-                <form onSubmit={handleSubmit} className="m-5">
+                <form onSubmit={handleSubmit(onSubmit)} className="m-5">
                     <div className="row">
                         <div className="col-6">
                             <div className="mb-3">
-                                <input type="text" className="form-control" name="nombre" placeholder="Nombre" value={form.nombre} onChange={handleChange}/>
+                                <input {...register("nombre", { required: true })} className="form-control" placeholder="Nombre"/>
+                                {errors.nombre?.type === 'required' && <p class="text-danger"><b>Campo obligatorio</b></p>}
+                                
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="mb-3">
-                                <input type="text" className="form-control" name="apellido" placeholder="Apellido" value={form.apellido} onChange={handleChange}/>
+                                <input {...register("apellido", { required: true })} type="text" className="form-control" placeholder="Apellido" />
+                                {errors.apellido?.type === 'required' && <p class="text-danger"><b>Campo obligatorio</b></p>}
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-6">
                             <div className="mb-3">
-                                <input type="email" className="form-control" name="email"placeholder="Email" value={form.email} onChange={handleChange}/>
+                                <input {...register("email", { required: true, pattern: /\S+@\S+/ })} type="text" className="form-control" placeholder="Email" />
+                                {errors.email?.type === 'required' && <p class="text-danger"><b>Campo obligatorio</b></p>}
+                                {errors.email?.type === 'pattern' && <p class="text-danger"><b>Email incorrecto</b></p>}
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="mb-3">
-                                <input type="password" className="form-control" name="password" placeholder="Contraseña" value={form.password} onChange={handleChange}/>
+                                <input {...register("pass", { required: true, maxLength:8 })} type="password" className="form-control" placeholder="Contraseña" />
+                                {errors.pass?.type === 'required' && <p class="text-danger"><b>Campo obligatorio</b></p>}
+                                {errors.pass?.type === 'maxLength' && <p class="text-danger"><b>La clave no puede tener más de 8 caracteres</b></p>}
                             </div>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-dark m-2">Ingresar</button>
+                    <Link to ="/login" className="btn btn-dark m-2">Ingresar</Link>
                     <button type="submit" className="btn btn-dark m-2">Registrarse</button>
                 </form>
             </div>

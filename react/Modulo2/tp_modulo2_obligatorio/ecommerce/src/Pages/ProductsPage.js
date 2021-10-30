@@ -31,7 +31,7 @@ const ProductsPage = () => {
             <Header/>
             <div className="container">
                 <div className="row mt-5">
-                    <h4 className="h4 text-center">Nuestros Productos</h4>
+                    
                     { productos.map(producto => { 
                             return <Product key={producto.id} producto={producto}></Product>;
                         })}

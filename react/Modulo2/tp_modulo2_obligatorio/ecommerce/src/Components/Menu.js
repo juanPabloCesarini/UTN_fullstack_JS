@@ -8,16 +8,16 @@ function Menu() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link "><i class="bi bi-house-fill text-success h3"></i><h3 class="m-2">Home</h3></Link>
+                <Link to="/" className="nav-link "><p class="bi bi-house-fill text-center"> Home</p></Link>
               </li>
               <li className="nav-item">
-                <Link to="/productos" className="nav-link"><i class="bi bi-shop text-success h3"></i><h3 class="m-2">Productos</h3></Link>
+                <Link to="/productos" className="nav-link"><p class="bi bi-shop text-center"> Productos</p></Link>
               </li>
               <li className="nav-item">
-                <Link to="/login" className="nav-link"><i class="bi bi-door-open text-success h3"></i><h3 class="m-2">Ingresar</h3></Link>
+                <Link to="/login" className="nav-link"><p class="bi bi-door-open text-center"> Ingresar</p></Link>
               </li>
               <li className="nav-item">
-                <Link to="/register" className="nav-link"><i class="bi bi-person-plus-fill text-success h3"></i><h3 class="m-2">Registrarse</h3></Link>
+                <Link to="/register" className="nav-link"><p class="bi bi-person-plus-fill text-center"> Registrarse</p></Link>
               </li>
             </ul>
           </div>

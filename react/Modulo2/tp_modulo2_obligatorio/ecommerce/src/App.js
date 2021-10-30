@@ -1,6 +1,5 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import './App.css';
-import Menu from './Components/Menu';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LoginPage from './Pages/LoginPage';
 import ProductsPage from './Pages/ProductsPage';
 import HomePage from './Pages/HomePage';
 import RegisterPage from './Pages/RegisterPage';
@@ -16,6 +15,11 @@ function App() {
               <Route path="/register">
                 <RegisterPage/>
               </Route>
+          
+              <Route path="/login">
+                <LoginPage/>
+              </Route>  
+          
               <Route path="/">
                 <HomePage/>
               </Route>
