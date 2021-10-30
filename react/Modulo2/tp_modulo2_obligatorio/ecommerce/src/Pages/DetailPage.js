@@ -1,29 +1,36 @@
 import { useEffect, useState } from "react";
 import Header from "../Components/Header";
-import Product from "../Components/Product";
+import Detail from "../Components/Detail";
 import Footer from "../Components/Footer";
-import { getAll } from "../Services/ItemServices";
+import { getById } from "../Services/ItemServices";
+import { useParams, Link } from "react-router-dom";
 
-const ProductsPage = () => {
+const DetailPage = () => {
     const [loading, setloading] = useState(true)
-    const [productos, setProductos] = useState([])
+    const [detalle, setDetalle] = useState([])
+    const { id } = useParams();
+
     useEffect(() => {
-       getAll()
-        .then(({data}) =>{
-            console.log(data)
-            setloading(false)
-            setProductos(data)
-        })
-    }, [])
+        getById(id)
+            .then(({ data }) => {
+                console.log("byid: " + data)
+                setloading(false)
+                setDetalle(data)
+            })
+      
+    }, [id])
     
 
     if(loading){
-        return (  
+        return (
+            <>
+            <Header/>
             <div className="text-center mt-5">
                 <div className="spinner-border text-success" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
+            </>
         );
     }else{
         return(
@@ -32,9 +39,9 @@ const ProductsPage = () => {
             <div className="container">
                 <div className="row mt-5">
                     
-                    { productos.map(producto => { 
-                            return <Product key={producto.id} producto={producto}></Product>;
-                        })}
+   
+                    <Detail key={detalle.id} detalle={detalle}></Detail>;
+    
 
                 </div>
             </div>
@@ -45,4 +52,4 @@ const ProductsPage = () => {
     
 
 }
-export default ProductsPage;
+export default DetailPage;

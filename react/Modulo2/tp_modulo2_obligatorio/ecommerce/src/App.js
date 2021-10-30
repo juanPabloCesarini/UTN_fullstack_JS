@@ -1,17 +1,20 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LoginPage from './Pages/LoginPage';
-import ProductsPage from './Pages/ProductsPage';
+
 import HomePage from './Pages/HomePage';
 import RegisterPage from './Pages/RegisterPage';
+import DetailPage from './Pages/DetailPage';
 function App() {
   return (
     <div className="App" >
       <Router>
             <Switch>
-              <Route path="/productos">
-                <ProductsPage/>
+           
+
+              <Route path="/detalle/:id">
+                <DetailPage/>
               </Route>
-            
+          
               <Route path="/register">
                 <RegisterPage/>
               </Route>

@@ -10,9 +10,7 @@ function Menu() {
               <li className="nav-item">
                 <Link to="/" className="nav-link "><p class="bi bi-house-fill text-center"> Home</p></Link>
               </li>
-              <li className="nav-item">
-                <Link to="/productos" className="nav-link"><p class="bi bi-shop text-center"> Productos</p></Link>
-              </li>
+             
               <li className="nav-item">
                 <Link to="/login" className="nav-link"><p class="bi bi-door-open text-center"> Ingresar</p></Link>
               </li>
