@@ -4,28 +4,22 @@ import { Link } from "react-router-dom";
 
 const Detail = ({detalle}) => {
     const foto = {
-        width: '50px',
-        height: '50px',
+        width: 'auto',
+        height: '350px',
         margin: '10px',
-    }
-    const col3 = {
-        width: '150px'
-    }
-    const col2 = {
-        width:'750px'
     }
     return (
         <>
-            <table>
-                <tbody>
-                    <tr className="mt-2">
-                        <td><img src={detalle.image} className="card-img-top" style={foto} alt="..." /></td>
-                        <td style={col2}><h5>{detalle.title}</h5></td>
-                        <td style={col3}><h5 className="text-right">$ {detalle.price}</h5></td>
-                        <td className="text-center" style={col3}><Link to="/detalle" className="btn btn-warning" ><i className="bi bi-eye-fill m-2"></i>Ver Detalle</Link> </td>
-                    </tr>
-                </tbody>
-        </table>
+            <div className="card shadow text-center" >
+                <h3 className="card-title "> u$s {detalle.price}</h3>
+                <img src={detalle.image} className="card-img-top"  style={foto} alt="..."/>
+                <div className="card-body">
+                    <h5 className="card-title">{detalle.category}</h5>
+                    <h5 className="card-text">{detalle.title}</h5>
+                    <p className="card-text">{detalle.description}</p>
+                    <a href="#" className="btn btn-dark"><i class="bi bi-cart-plus-fill m-2"></i> Agregar</a>
+                </div>
+            </div>
 
         </>
     );

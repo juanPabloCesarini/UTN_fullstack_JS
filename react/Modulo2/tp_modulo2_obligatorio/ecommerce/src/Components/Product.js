@@ -17,15 +17,15 @@ const Product = ({producto}) => {
     return (
         <>
             <table>
-                <tbody>
+             
                     <tr className="mt-2">
+                        
                         <td><img src={producto.image} className="card-img-top" style={foto} alt="..." /></td>
                         <td style={col2}><h5>{producto.title}</h5></td>
                         <td style={col3}><h5 className="text-right">$ {producto.price}</h5></td>
-                        <td className="text-center" style={col3}><Link to={`/detalle/${producto.id}`} className="btn btn-warning" ><i className="bi bi-eye-fill m-2"></i>Ver Detalle</Link> </td>
+                        <td className="text-center" style={col3}><Link to={`/detalle/${producto.id}`} className="btn btn-secondary" ><i className="bi bi-eye-fill m-2"></i>Ver</Link> </td>
                     </tr>
-                </tbody>
-        </table>
+            </table>
 
         </>
     );

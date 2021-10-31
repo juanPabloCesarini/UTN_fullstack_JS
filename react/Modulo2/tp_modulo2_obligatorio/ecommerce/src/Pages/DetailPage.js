@@ -36,15 +36,12 @@ const DetailPage = () => {
         return(
             <>
             <Header/>
-            <div className="container">
-                <div className="row mt-5">
-                    
-   
-                    <Detail key={detalle.id} detalle={detalle}></Detail>;
-    
-
+                <div className="row justify-content-center">
+                    <div className="col-4">
+                        <h4 className="text-center m-5">Detalle del producto</h4>
+                        <Detail key={detalle.id} detalle={detalle}></Detail>
+                    </div>
                 </div>
-            </div>
             <Footer/>
             </>
         )
