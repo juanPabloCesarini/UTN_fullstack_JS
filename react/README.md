@@ -19,6 +19,9 @@
     </ul>
 </ol>
 
+### REACT BOOTSTRAP
+<li>npm install react-bootstrap bootstrap@5.1.3</li>
+
 ### Rutas
 ## Dentro del proyecto
 <li>npm install react-router-dom</li>
