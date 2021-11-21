@@ -11,7 +11,7 @@ function HeaderAdmin() {
                     </ul>
                     <div className="col-md-3 text-end">
                         <button type="button" className="btn btn-outline-primary me-2"><Link to ="/admin/login">Login</Link></button>
-                        <button type="button" className="btn btn-primary">Sign-up</button>
+                        <button type="button" className="btn btn-outline-primary me-2"><Link to ="/admin/register"> Sign-up</Link></button>
                     </div>
                 </header>
             </div>

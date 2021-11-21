@@ -1,19 +1,22 @@
 import React  from "react";
 import { useForm } from "react-hook-form";
 import firebase from "../../Config/firebase";
+import { Link, useHistory } from 'react-router-dom';
 
 function FormLogin(){
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const history = useHistory();
     const onSubmit = async (data)  => {
         try {
             const responseUser = await firebase.auth.signInWithEmailAndPassword(data.email,data.pass)
             console.log(responseUser.user.uid)
             if(responseUser.user.uid){
-                const userInfo = await firebase.db.collection("usuarios")
-                .where("userId", "==",responseUser.user.uid)
+                const userInfo = await firebase.db.collection("administradores")
+                .where("userAdminId", "==",responseUser.user.uid)
                 .get()
+                history.push('/admin');
                 
-                alert("estas logueado")
+                
             }
         }catch(e){
             console.log(e)

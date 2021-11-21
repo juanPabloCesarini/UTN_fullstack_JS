@@ -5,6 +5,7 @@ import HomeAdmin from './Pages/Admin/HomeAdmin';
 import PerfilAdmin from './Pages/Admin/PerfilAdmin';
 import NotFound from './Pages/NotFound';
 import LoginAdmin from './Pages/Admin/LoginAdmin';
+import RegisterAdmin from './Pages/Admin/RegisterAdmin';
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route path="/admin/login">
             <LoginAdmin/>
+          </Route>  
+          <Route path="/admin/register">
+            <RegisterAdmin/>
           </Route>  
           <Route path="/admin/perfil">
             <PerfilAdmin/>
