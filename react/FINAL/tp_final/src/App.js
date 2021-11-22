@@ -20,7 +20,7 @@ function App() {
           <Route path="/admin/register">
             <RegisterAdmin/>
           </Route>  
-          <Route path="/admin/perfil">
+          <Route path="/admin/perfil/:id">
             <PerfilAdmin/>
           </Route>
           <Route path="/admin">

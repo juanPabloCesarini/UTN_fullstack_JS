@@ -6,9 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+      <App />
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

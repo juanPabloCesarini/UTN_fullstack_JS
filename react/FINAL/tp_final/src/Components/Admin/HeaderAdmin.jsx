@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import {Link } from "react-router-dom";
 import MenuAdmin from "./MenuAdmin";
+
 function HeaderAdmin() {
+ 
     return (
         <>
              <div className="container">
@@ -9,10 +11,10 @@ function HeaderAdmin() {
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <MenuAdmin/>
                     </ul>
-                    <div className="col-md-3 text-end">
-                        <button type="button" className="btn btn-outline-primary me-2"><Link to ="/admin/login">Login</Link></button>
-                        <button type="button" className="btn btn-outline-primary me-2"><Link to ="/admin/register"> Sign-up</Link></button>
-                    </div>
+                    <ul className="nav col-md-3 text-end">
+                        <li className="nav-item"><Link to ="/admin/login" className="nav-link btn btn-primary m-2 text-white">Ingresar</Link></li>
+                        <li className="nav-item"><Link to="/admin/register" className="nav-link btn btn-primary m-2 text-white">Registrarse</Link></li>
+                    </ul>
                 </header>
             </div>
         </>

@@ -14,7 +14,7 @@ function FormLogin(){
                 const userInfo = await firebase.db.collection("administradores")
                 .where("userAdminId", "==",responseUser.user.uid)
                 .get()
-                history.push('/admin');
+                history.push('/admin/perfil/');
                 
                 
             }
