@@ -17,11 +17,11 @@ function FormRegister(){
             
           
             if (responseUser.user.uid){
-                const document = firebase.db.collection("administadores")
+                const document = firebase.db.collection("usuarios")
                 .add({
                     nombre:data.nombre,
                     apellido:data.apellido,
-                    userAdminId: responseUser.user.uid
+                    userId: responseUser.user.uid
                 })
                 console.log(document+ "<- lo que se deberia guardar");
                 history.push("/admin");
