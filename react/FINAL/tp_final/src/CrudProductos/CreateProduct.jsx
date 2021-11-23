@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import FooterAdmin from "../Components/Admin/FooterAdmin";
 import HeaderAdmin from "../Components/Admin/HeaderAdmin";
 import firebase from '../Config/firebase'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 function CreateProduct(){
     const { register, handleSubmit,formState:{errors} ,reset} = useForm();
     const [image, setImage] = useState([])
+    const history = useHistory()
     const onSubmit = async (data) => {
         try{
             const document = await firebase.db.collection('productos')
@@ -24,6 +25,7 @@ function CreateProduct(){
                 await firebase.db.doc("productos/"+document.id)
                     .set({...producto.data(), imagen: url})
             }
+            history.push("/admin/productos/lista");
             reset({})
         } catch (e){
             console.log(e)

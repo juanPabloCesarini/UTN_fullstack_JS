@@ -10,7 +10,7 @@ function ReadProduct(){
         () => {
             const request = async () =>{
                 try {
-                    const querySnapshot = await firebase.database.collection("productos")
+                    const querySnapshot = await firebase.db.collection("productos")
                     .get()
                     if(querySnapshot.docs){
                         setProductos(querySnapshot.docs)
@@ -64,8 +64,8 @@ function ReadProduct(){
                                                 <td>{producto.data().precio}</td>
                                                 <td>
                                                 <div className="form-group text-center">
-                                                    <Link to={`/admin/product/edit/${producto.id}`} className="btn btn-success btn-sm mr-1">Editar</Link>
-                                                    <Link to={`/admin/product/delete/${producto.id}`}  className="btn btn-danger btn-sm">Borrar</Link>
+                                                    <Link to={`/admin/productos/editar/${producto.id}`} className="btn btn-success btn-sm m-2">Editar</Link>
+                                                    <Link to={`/admin/productos/borrar/${producto.id}`}  className="btn btn-danger btn-sm m-2">Borrar</Link>
                                                 </div>
                                                 </td>
                                             </tr>

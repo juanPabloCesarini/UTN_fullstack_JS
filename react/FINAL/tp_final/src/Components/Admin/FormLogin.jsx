@@ -20,7 +20,6 @@ function FormLogin(){
                 .get()
                 console.log(userInfo.nombre);
                 context.loginUser(userInfo.docs[0]?.data())
-                console.log(userInfo.docs[0]?.data() + "<-- userinfo")
                 history.push('/admin');
                 
                 

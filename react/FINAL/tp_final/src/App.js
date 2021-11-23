@@ -9,6 +9,8 @@ import RegisterAdmin from './Pages/Admin/RegisterAdmin';
 import AuthProvider from './Context/AuthProvider';
 import CreateProduct from './CrudProductos/CreateProduct';
 import ReadProduct from './CrudProductos/ReadProduct';
+import UpdateProduct from './CrudProductos/UpdateProduct';
+import DeleteProduct from './CrudProductos/DeleteProduct';
 
 
 function App() {
@@ -25,6 +27,12 @@ function App() {
           </Route>  
           <Route path="/admin/productos/lista">
             <ReadProduct/>
+          </Route>
+          <Route path="/admin/productos/editar/:id">
+            <UpdateProduct/>
+          </Route>
+          <Route path="/admin/productos/borrar/:id">
+            <DeleteProduct/>
           </Route>
           <Route path="/admin/productos/nuevo">
             <CreateProduct/>

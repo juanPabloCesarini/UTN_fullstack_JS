@@ -23,7 +23,7 @@ function FormRegister(){
                     apellido:data.apellido,
                     userId: responseUser.user.uid
                 })
-                console.log(document+ "<- lo que se deberia guardar");
+                
                 history.push("/admin");
               
                 
