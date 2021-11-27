@@ -11,6 +11,7 @@ import CreateProduct from './CrudProductos/CreateProduct';
 import ReadProduct from './CrudProductos/ReadProduct';
 import UpdateProduct from './CrudProductos/UpdateProduct';
 import DeleteProduct from './CrudProductos/DeleteProduct';
+import HomePublic from './Pages/Public/HomePublic';
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/admin">
             <HomeAdmin/>
+          </Route>
+          <Route path="/">
+            <HomePublic/>
           </Route>
           <Route path="*">
             <NotFound/>
