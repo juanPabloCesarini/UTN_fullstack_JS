@@ -1,55 +1,47 @@
-
-import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import HomeAdmin from './Pages/Admin/HomeAdmin';
-
-import NotFound from './Pages/NotFound';
+import './App.css';
 import LoginAdmin from './Pages/Admin/LoginAdmin';
 import RegisterAdmin from './Pages/Admin/RegisterAdmin';
-import AuthProvider from './Context/AuthProvider';
-import CreateProduct from './CrudProductos/CreateProduct';
 import ReadProduct from './CrudProductos/ReadProduct';
 import UpdateProduct from './CrudProductos/UpdateProduct';
 import DeleteProduct from './CrudProductos/DeleteProduct';
+import CreateProduct from './CrudProductos/CreateProduct';
+import HomeAdmin from './Pages/Admin/HomeAdmin';
+import AuthProvider from './Context/AuthProvider';
+import NotFound from './Pages/NotFound';
 import HomePublic from './Pages/Public/HomePublic';
+import RegisterPublic from './Pages/Public/RegisterPublic';
+import LoginPublic from './Pages/Public/LoginPublic';
+
+
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <AuthProvider>
-      <Router>
-        <Switch>
-          <Route path="/admin/login">
-            <LoginAdmin/>
-          </Route>  
-          <Route path="/admin/register">
-            <RegisterAdmin/>
-          </Route>  
-          <Route path="/admin/productos/lista">
-            <ReadProduct/>
-          </Route>
-          <Route path="/admin/productos/editar/:id">
-            <UpdateProduct/>
-          </Route>
-          <Route path="/admin/productos/borrar/:id">
-            <DeleteProduct/>
-          </Route>
-          <Route path="/admin/productos/nuevo">
-            <CreateProduct/>
-          </Route>
-          <Route path="/admin">
-            <HomeAdmin/>
-          </Route>
-          <Route path="/">
-            <HomePublic/>
-          </Route>
-          <Route path="*">
-            <NotFound/>
-          </Route>
+        <Router>
+          <Switch>
+            
+            <Route path="/admin/login" component={LoginAdmin}/>
+            <Route path="/admin/register"component={RegisterAdmin}/>         
+            <Route path="/admin/productos/lista" component={ReadProduct}/>
+            <Route path="/admin/productos/editar/:id" component={UpdateProduct}/>
+            <Route path="/admin/productos/borrar/:id"component={DeleteProduct}/>
+            <Route path="/admin/productos/nuevo"component={CreateProduct}/>
+            <Route path="/admin" component={HomeAdmin}/>
+          
+            <Route path="/login" component={LoginPublic}/>
+            <Route path="/register" component={RegisterPublic}/>
+            <Route path="/" component={HomePublic} />
+            
+             
+            <Route path="*" component={NotFound}/>
+            
         </Switch> 
-      </Router>
+        </Router>
       </AuthProvider>
+      
     </div>
   );
 }
