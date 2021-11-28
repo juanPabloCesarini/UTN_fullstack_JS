@@ -12,6 +12,7 @@ import NotFound from './Pages/NotFound';
 import HomePublic from './Pages/Public/HomePublic';
 import RegisterPublic from './Pages/Public/RegisterPublic';
 import LoginPublic from './Pages/Public/LoginPublic';
+import ProductsPublic from './Pages/Public/ProductsPublic';
 
 
 
@@ -32,7 +33,8 @@ function App() {
             <Route path="/admin" component={HomeAdmin}/>
           
             <Route path="/login" component={LoginPublic}/>
-            <Route path="/register" component={RegisterPublic}/>
+            <Route path="/register" component={RegisterPublic} />
+            <Route path="/productos" component={ProductsPublic}/>
             <Route path="/" component={HomePublic} />
             
              
