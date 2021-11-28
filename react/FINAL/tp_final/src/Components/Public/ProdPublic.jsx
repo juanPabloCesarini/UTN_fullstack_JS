@@ -23,7 +23,7 @@ function ProdPublic() {
     )
     const foto = {
         width: '100%',
-        height: '225px',
+        height: '250px',
     }
     return (
         <>
@@ -31,10 +31,11 @@ function ProdPublic() {
             {productos && productos.map((producto, index) => (
                 <>
                     <h1 className="card-title text-center">{ producto.data().nombre}</h1>
-                    <img src={producto.data().image} className="bd-placehorder card-img-top" style={foto} alt="..." /><div className="card-body">
+                    <img src={producto.data().imagen} className="bd-placehorder card-img-top" style={foto} alt="..." />
+                    <div className="card-body">
                         <h3 className="card-title text-center">$ { producto.data().precio}</h3>
                         <p className="card-text">{producto.data().descripcion}</p>
-                        <p className="card-text">{ producto.data().sku}</p>
+                        <p className="card-text">SKU: { producto.data().sku}</p>
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                             <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
