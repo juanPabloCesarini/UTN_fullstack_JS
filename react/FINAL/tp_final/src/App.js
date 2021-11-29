@@ -13,6 +13,7 @@ import HomePublic from './Pages/Public/HomePublic';
 import RegisterPublic from './Pages/Public/RegisterPublic';
 import LoginPublic from './Pages/Public/LoginPublic';
 import ProductsPublic from './Pages/Public/ProductsPublic';
+import DetailPublic from './Pages/Public/DetailPublic';
 
 
 
@@ -34,7 +35,8 @@ function App() {
           
             <Route path="/login" component={LoginPublic}/>
             <Route path="/register" component={RegisterPublic} />
-            <Route path="/productos" component={ProductsPublic}/>
+            <Route path="/productos" component={ProductsPublic} />
+            <Route path="/detalle/:id" component={DetailPublic}/>
             <Route path="/" component={HomePublic} />
             
              
