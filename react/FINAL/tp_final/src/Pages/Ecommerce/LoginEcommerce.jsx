@@ -1,5 +1,5 @@
-import FormLogin from "../../Components/Public/FormLogin";
-function LoginPublic() {
+import FormLogin from "../../Components/Ecommerce/FormLogin";
+function LoginEcommerce() {
     return (
         <div className="m-0 vh-100 row justify-content-center align-items-center">
             <FormLogin></FormLogin>
@@ -7,4 +7,4 @@ function LoginPublic() {
      );
 }
 
-export default LoginPublic;
+export default LoginEcommerce;

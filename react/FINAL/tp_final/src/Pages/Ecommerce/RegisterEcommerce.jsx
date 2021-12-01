@@ -1,6 +1,6 @@
-import FormRegister from "../../Components/Public/FromRegister";
+import FormRegister from "../../Components/Ecommerce/FromRegister";
 
-function RegisterPublic() {
+function RegisterEcommerce() {
     return (
         <>
         
@@ -13,4 +13,4 @@ function RegisterPublic() {
     );
 }
 
-export default RegisterPublic;
+export default RegisterEcommerce;

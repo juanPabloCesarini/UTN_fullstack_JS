@@ -1,10 +1,11 @@
 import { React, useState, useEffect } from "react"
 import {Link} from 'react-router-dom'
 import firebase from '../../Config/firebase';
+import Loading from "../Loading";
 
-function ProdPublic() {
+function ProdEcommerce() {
      const [productos, setProductos] = useState([])
-
+     const [loading, setLoading] = useState(true)
     useEffect(
         () => {
             const request = async () =>{
@@ -13,6 +14,7 @@ function ProdPublic() {
                     .get()
                     if(querySnapshot.docs){
                         setProductos(querySnapshot.docs)
+                        setLoading(false)
                     }
                 }catch (e){
                     console.log(e);
@@ -25,6 +27,19 @@ function ProdPublic() {
         width: '100%',
         height: '250px',
     }
+
+    if (loading) {
+        return (
+            <>
+                
+                <div className="text-center">
+                    <Loading />
+                 
+                </div>
+                
+            </>
+        )
+    } else {
     return (
         <>
             
@@ -43,7 +58,7 @@ function ProdPublic() {
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="btn-group">
                                             <Link to ={`/detalle/${producto.id}`} type="button" class="btn btn-sm btn-primary"><i class="bi bi-eye-fill m-1"></i>Ver detalle</Link>
-                                            <button type="button" class="btn btn-sm btn-primary"><i class="bi bi-cart4 m-1"></i>Comprar</button>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -55,6 +70,7 @@ function ProdPublic() {
                 
         </>
     );
+    }
 
 }
-export default ProdPublic;
+export default ProdEcommerce;

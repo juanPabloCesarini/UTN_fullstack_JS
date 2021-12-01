@@ -1,12 +1,12 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import DetPublic from "../../Components/Public/DetPublic";
-import FooterPublic from "../../Components/Public/FooterPublic";
-import HeaderPublic from "../../Components/Public/HeaderPublic";
+import CheckEcommerce from '../../Components/Ecommerce/CheckEcommerce';
+import FooterEcommerce from "../../Components/Ecommerce/FooterEcommerce";
+import HeaderEcommerce from "../../Components/Ecommerce/HeaderEcommerce";
 import firebase from "../../Config/firebase";
 import Loading from "../../Components/Loading";
 
-function DetailPublic() {
+function CheckoutEcommerce() {
 
     const { id } = useParams()
     const [loading, setLoading] = useState(true)
@@ -33,7 +33,7 @@ function DetailPublic() {
     if (loading) {
         return (
             <>
-                <HeaderPublic />
+                <HeaderEcommerce />
                 
                     <Loading />
              
@@ -43,20 +43,20 @@ function DetailPublic() {
     } else {
         return (
             <>
-                <HeaderPublic />
+                <HeaderEcommerce />
                 <div className="bg-dark">
                     <div className="container">
                         <div className="d-flex justify-content-center">
-                            <div className="col-4">
-                                <DetPublic key={producto.id} producto={producto} />
-                            </div>
+                            
+                                <CheckEcommerce key={producto.id} producto={producto} />
+    
                         </div>
                     </div>
                 </div>
              
-                <FooterPublic />
+                <FooterEcommerce />
             </>
         )
     }
 }
-export default DetailPublic;
+export default CheckoutEcommerce;

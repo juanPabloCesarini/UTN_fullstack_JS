@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function MenuPublic() {
+function MenuEcommerce() {
     return (
         <>
       
@@ -7,11 +7,11 @@ function MenuPublic() {
         
         <li className="nav-item"><Link to="/productos" className="nav-link px-2 text-muted">Productos</Link></li>
         
-        <li className="nav-item"><Link to ="/carrito" className="nav-link px-2 text-muted">Carrito</Link></li>
+        
       </>
 
               
      );
 }
 
-export default MenuPublic;
+export default MenuEcommerce;

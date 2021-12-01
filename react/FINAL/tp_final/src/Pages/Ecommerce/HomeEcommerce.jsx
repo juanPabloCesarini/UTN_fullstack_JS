@@ -1,12 +1,12 @@
 import React from "react";
-import HeaderPublic from "../../Components/Public/HeaderPublic";
-import FooterPublic from "../../Components/Public/FooterPublic";
-function HomePublic() {
+import HeaderEcommerce from "../../Components/Ecommerce/HeaderEcommerce";
+import FooterEcommerce from "../../Components/Ecommerce/FooterEcommerce";
+function HomeEcommerce() {
    
 
     return (
         <>
-             <HeaderPublic />
+             <HeaderEcommerce />
                 <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                     <div className="my-3 p-3">
                         <h2 className="display-5">tucelu.com</h2>
@@ -15,11 +15,11 @@ function HomePublic() {
                     <div className="bg-dark shadow-sm mx-auto"></div>
                 </div>
   
-             <FooterPublic/>
+             <FooterEcommerce/>
         </>
            
             
         
     );
 }
-export default HomePublic;
+export default HomeEcommerce;

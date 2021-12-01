@@ -9,12 +9,12 @@ import CreateProduct from './CrudProductos/CreateProduct';
 import HomeAdmin from './Pages/Admin/HomeAdmin';
 import AuthProvider from './Context/AuthProvider';
 import NotFound from './Pages/NotFound';
-import HomePublic from './Pages/Public/HomePublic';
-import RegisterPublic from './Pages/Public/RegisterPublic';
-import LoginPublic from './Pages/Public/LoginPublic';
-import ProductsPublic from './Pages/Public/ProductsPublic';
-import DetailPublic from './Pages/Public/DetailPublic';
-
+import HomeEcommerce from './Pages/Ecommerce/HomeEcommerce';
+import RegisterEcommerce from './Pages/Ecommerce/RegisterEcommerce';
+import LoginEcommerce from './Pages/Ecommerce/LoginEcommerce';
+import ProductsEcommerce from './Pages/Ecommerce/ProductsEcommerce';
+import DetailEcommerce from './Pages/Ecommerce/DetailEcommerce';
+import CheckoutEcommerce from './Pages/Ecommerce/CheckoutEcommerce';
 
 
 
@@ -33,11 +33,12 @@ function App() {
             <Route path="/admin/productos/nuevo"component={CreateProduct}/>
             <Route path="/admin" component={HomeAdmin}/>
           
-            <Route path="/login" component={LoginPublic}/>
-            <Route path="/register" component={RegisterPublic} />
-            <Route path="/productos" component={ProductsPublic} />
-            <Route path="/detalle/:id" component={DetailPublic}/>
-            <Route path="/" component={HomePublic} />
+            <Route path="/login" component={LoginEcommerce}/>
+            <Route path="/register" component={RegisterEcommerce} />
+            <Route path="/productos" component={ProductsEcommerce} />
+            <Route path="/detalle/:id" component={DetailEcommerce}/>
+            <Route path="/confirm/:id" component={CheckoutEcommerce}/>
+            <Route path="/" component={HomeEcommerce} />
             
              
             <Route path="*" component={NotFound}/>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-const DetPublic = ({producto}) => {
+const DetEcommerce = ({producto}) => {
     const foto = {
         width: 'auto',
         height: '250px',
@@ -34,4 +34,4 @@ const DetPublic = ({producto}) => {
     );
 }
 
-export default DetPublic;
+export default DetEcommerce;
