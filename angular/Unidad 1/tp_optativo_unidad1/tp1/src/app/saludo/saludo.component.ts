@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saludo.component.css']
 })
 export class SaludoComponent implements OnInit {
-  nombre:string=" tu nombre"
+  nombre = "hola";
   constructor() { }
 
   ngOnInit(): void {
