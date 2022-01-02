@@ -6,3 +6,5 @@
 <p align="center">Dentro de la app: ng serve, en el navegador la url es: http://localhost:4200/</p>
 <h3 align="center" color ="">CREAR COMPONENTE</h3>
 <p align="center">ng generate component *nombre_componente*</p>
+<h3 align="center">CREEAR SERVICIOS</h3>
+<p align="center">ng generate service nombre-servicio</p>
