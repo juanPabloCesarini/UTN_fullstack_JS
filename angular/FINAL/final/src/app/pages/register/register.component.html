@@ -1,0 +1,54 @@
+<div class="col-md-6 mx-auto">
+    <div class="card card-body bg-light mt-5">
+        <h3>Alta de Usuario</h3>
+        <form [formGroup]="formGroup" (ngSubmit)="register()" class="row g-3">
+            <div class="col-12">
+                <label for="nombre" class="form-label">Nombre:<sup>*</sup></label>
+                <input type="nombre" class="form-control" [ngClass]="{'is-invalid':formGroup.get('nombre')?.invalid && formGroup.get('nombre')?.dirty}" autocomplete="off" formControlName="nombre" />
+                <span class="invalid-feedback">{{getErrorMessageNombre()}}</span>
+            </div>
+            <div class="col-12">
+                <label for="apellido" class="form-label">Apellido:<sup>*</sup></label>
+                <input type="apellido" class="form-control" [ngClass]="{'is-invalid':formGroup.get('apellido')?.invalid && formGroup.get('apellido')?.dirty}" autocomplete="off" formControlName="apellido" />
+                <span class="invalid-feedback">{{getErrorMessageApellido()}}</span>
+            </div>
+            <div class="col-12">
+                <label for="telefono" class="form-label">Telefono:</label>
+                <input type="number" class="form-control" autocomplete="off" formControlName="telefono" />
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email:<sup>*</sup></label>
+                <input type="email" class="form-control" [ngClass]="{'is-invalid':formGroup.get('email')?.invalid && formGroup.get('email')?.dirty}" autocomplete="off" formControlName="email" />
+                <span class="invalid-feedback">{{getErrorMessageEmail()}}</span>
+            </div>
+            <div class="col-12">
+                <label for="password" class="form-label">Contraseña:<sup>*</sup></label>
+                <div class="input-group mb-3">
+                    <input [type]="hide ? 'password' : 'text'" class="form-control"
+                        [ngClass]="{'is-invalid':formGroup.get('password')?.invalid && formGroup.get('password')?.dirty}"
+                        autocomplete="off" formControlName="password" />
+
+                    <span class="invalid-feedback">{{getErrorMessagePassword()}}</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="passwordConfirm" class="form-label">Confirmar Contraseña:<sup>*</sup></label>
+                <div class="input-group mb-3">
+                    <input [type]="hide ? 'password' : 'text'" class="form-control"
+                        [ngClass]="{'is-invalid':formGroup.get('passwordConfirm')?.invalid && formGroup.get('passwordConfirm')?.dirty}"
+                        autocomplete="off" formControlName="passwordConfirm" />
+
+                    <span class="invalid-feedback">{{getErrorMessagePasswordConfirm()}}</span>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="d-grid gap-2 col-6">
+                    <button type="submit" class="btn btn-success" [disabled]="formGroup.invalid">Registrarme</button>
+                </div>
+                <div class="d-grid gap-2 col-6">
+                    <a class="btn btn-dark" routerLink="/login">Iniciar Sesión</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

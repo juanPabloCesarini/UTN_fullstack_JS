@@ -8,3 +8,16 @@
 <p align="center">ng generate component *nombre_componente*</p>
 <h3 align="center">CREEAR SERVICIOS</h3>
 <p align="center">ng generate service nombre-servicio</p>
+
+<h2 align ="center">INSTALAR BOOSTRAP</h2>
+<p align="center">npm install bootstrap jquery @popperjs/core</p>
+<p align="center">En el archivo angular.json agregar</p>
+<p>styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.scss"
+],
+"scripts": [
+  "node_modules/jquery/dist/jquery.min.js",
+  "node_modules/@popperjs/core/dist/umd/popper.min.js",
+  "node_modules/bootstrap/dist/js/bootstrap.min.js"
+]</p>
