@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="justify-content-center align-items-center">
+    <div class="row">
+      <div *ngIf="loading" class="text-center mt-3">
+         <div class="spinner-border text-primary" role="status"></div>
+         <div class="spinner-border text-primary" role="status"></div>
+         <div class="spinner-border text-primary" role="status"></div>
+      </div>
+      <div *ngFor="let prod of listaProductos"class="col-lg-3">
+        <div class="card m-3 p-3" style="width: 18rem;">
+          <img src="{{prod.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h1 class="card-text">{{prod.price | currency}}</h1>
+            <h5 class="card-title">{{prod.title}}</h5>
+            <button  (click)="detalle(prod.id)" class="btn btn-primary btn-lg">Ver Detalle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

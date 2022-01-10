@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div class="contenedor">
+    <div *ngIf="loading" class="text-center mt-3">
+         <div class="spinner-border text-primary" role="status"></div>
+         <div class="spinner-border text-primary" role="status"></div>
+         <div class="spinner-border text-primary" role="status"></div>
+    </div>
+  <div *ngFor="let p of producto" class="col-lg-3">
+
+    <div class="card shadow m-3 p-3" >
+      <h1 class="h1 text-center">{{p.category | uppercase}}</h1>
+      <img src="{{p.image}}" class="card-img-top mt-3" alt="...">
+      <div class="card-body">
+      <h1 class="card-text text-center">{{p.price | currency}}</h1>
+      <h5 class="card-title">{{p.title}}</h5>
+      <p class="card-text">{{p.description}}</p>
+    </div>
+  </div>
+</div>

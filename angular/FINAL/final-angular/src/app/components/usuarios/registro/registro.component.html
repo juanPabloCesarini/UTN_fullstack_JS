@@ -1,1 +1,44 @@
-<p>registro works!</p>
+<app-header></app-header>
+<div class="contenedor">
+    <h3 class="text-center">REGISTRO DE USUARIO</h3>
+    <form [formGroup]="formRegistro">
+      <div class="row">
+        <div class="col-lg-6">
+          <input required [(ngModel)]="inputNombre"type="text" formControlName="nombre" class="form-control form-control-lg m-3" placeholder="Nombre">
+           <div *ngIf="inputNombre!=''" class="text-center mt-2 mb-2">
+            <span *ngIf="this.formRegistro.get('nombre')?.errors?.['required']" class="alert alert-danger"><strong>Campo Requerido</strong></span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <input required [(ngModel)]="inputApellido" type="text" formControlName="apellido" class="form-control form-control-lg m-3" placeholder="Apellido">
+           <div *ngIf="inputApellido!=''"  class="text-center mt-2 mb-2">
+            <span *ngIf="this.formRegistro.get('apellido')?.errors?.['required']" class="alert alert-danger"><strong>Campo Requerido</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <input required [(ngModel)]="inputEmail" type="email" formControlName="email" class="form-control form-control-lg m-3" placeholder="Email">
+          <div *ngIf="inputEmail!=''" class="text-center mt-2 mb-2">
+            <span *ngIf="this.formRegistro.get('email')?.errors?.['required']" class="alert alert-danger"><strong>Campo Requerido</strong></span>
+            <span *ngIf="this.formRegistro.get('email')?.errors?.['email']" class="alert alert-danger"><strong>El mail no es válido</strong></span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <input required [(ngModel)]="inputPass"type="pasword" formControlName="password" class="form-control form-control-lg m-3" placeholder="Password">
+          <div *ngIf="inputPass!=''" class="text-center mt-2 mb-2">
+              <span *ngIf="this.formRegistro.get('password')?.errors?.['required']" class="alert alert-danger"><strong>Campo Requerido</strong></span>
+              <span *ngIf="this.formRegistro.get('password')?.errors?.['maxlength']" class="alert alert-danger"><strong>La password debe tener 8 caracteres como máximo</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <button class="btn btn-primary btn-lg">Registrarse</button>
+        </div>
+
+      </div>
+    </form>
+
+</div>
+
