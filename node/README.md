@@ -10,3 +10,8 @@
     <li>En la carpeta del proyecto</li>
     <li>npm start</li>
 </li>
+<hr>
+<li>Para trabajar con mongo
+    <li>En la carpeta del proyecto</li>
+    <li>npm install mongoose</li>
+</li>
