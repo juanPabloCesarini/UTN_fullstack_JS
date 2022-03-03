@@ -1,18 +1,15 @@
-const productoModel = require('../models/productosModel');
+const categoriaModel = require('../models/categoriasModel');
 
 
 module.exports = {
     create: async function (req, res, next) {
         try {
             console.log(req.body);
-            const prod = new productoModel({
+            const cat = new categoriaModel({
                 nombre: req.body.nombre,
-                precio: req.body.precio,
-                sku: req.body.sku,
-                descripcion: req.body.descripcion,
-                categoria: req.body.categoria,
+               
             });
-            const document = await prod.save();
+            const document = await cat.save();
             res.json(document);
         } catch (e) {
             console.log(e);
@@ -26,7 +23,7 @@ module.exports = {
     getAll: async function (req, res, next) {
         console.log(req.query);
         try {
-            const documents = await productoModel.find().populate("categoria");
+            const documents = await categoriaModel.find();
             res.json(documents);
         } catch (e) {
             console.log(e);
@@ -37,7 +34,7 @@ module.exports = {
     getById: async function (req, res, next) {
         console.log(req.params, req.params.id);
         try {
-            const documents = await productoModel.findById(req.params.id);
+            const documents = await categoriaModel.findById(req.params.id);
             res.json(documents);
         } catch (e) {
             console.log(e);
