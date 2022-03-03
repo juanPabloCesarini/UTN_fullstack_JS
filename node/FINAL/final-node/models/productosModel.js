@@ -2,7 +2,7 @@ const mongoose = require('../db/connect_mongo');
 const err_mge = require('../util/util_error_message');
 
 // Creación Schema
-const productoSchema = mongoose.Schema({
+const productoSchema = new mongoose.Schema({
     nombre:{
         type:String,
         required: [true, err_mge.GELERAL.campo_obligatorio],
@@ -21,9 +21,9 @@ const productoSchema = mongoose.Schema({
         required: [true, err_mge.GELERAL.campo_obligatorio],
     },
     categoria:{
-        type:mongoose.Schema.ObjectId,
-        ref: categorias,
-    }
+        type: mongoose.Schema.ObjectId,
+        ref: "categorias",
+    } 
 })
 
 productoSchema.set("toJSON",{getters: true});

@@ -10,7 +10,7 @@ module.exports = {
                 precio: req.body.precio,
                 sku: req.body.sku,
                 descripcion: req.body.descripcion,
-                categoria: req.body.categoria,
+                categoria: req.body.categoria
             });
             const document = await prod.save();
             res.json(document);
@@ -26,7 +26,9 @@ module.exports = {
     getAll: async function (req, res, next) {
         console.log(req.query);
         try {
-            const documents = await productoModel.find().populate("categoria");
+            const documents = await productoModel.find()
+                .populate("categoria")
+                .sort({precio:-1, nombre:1})
             res.json(documents);
         } catch (e) {
             console.log(e);

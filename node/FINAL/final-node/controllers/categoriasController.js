@@ -7,7 +7,6 @@ module.exports = {
             console.log(req.body);
             const cat = new categoriaModel({
                 nombre: req.body.nombre,
-               
             });
             const document = await cat.save();
             res.json(document);
@@ -15,9 +14,7 @@ module.exports = {
             console.log(e);
             //res.json(e.message);
             next(e);
-
-        }
-        
+        }   
     },
 
     getAll: async function (req, res, next) {
@@ -31,15 +28,5 @@ module.exports = {
         }
     },
 
-    getById: async function (req, res, next) {
-        console.log(req.params, req.params.id);
-        try {
-            const documents = await categoriaModel.findById(req.params.id);
-            res.json(documents);
-        } catch (e) {
-            console.log(e);
-            next(e);
-        }
-    }
-
+    
 }
