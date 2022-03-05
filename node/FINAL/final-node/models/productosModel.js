@@ -15,7 +15,11 @@ const productoSchema = new mongoose.Schema({
             return "$ "+value
         }
     },
-    sku: String,
+    sku: {
+        type: String,
+        required: [true, err_mge.GELERAL.campo_obligatorio],
+        unique: true,
+    },
     descripcion: {
         type: String,
         required: [true, err_mge.GELERAL.campo_obligatorio],
